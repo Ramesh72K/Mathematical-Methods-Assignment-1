@@ -1,0 +1,656 @@
+\documentclass[]{book}
+
+%These tell TeX which packages to use.
+\usepackage{array,epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsxtra}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\raggedbottom
+
+
+%Here I define some theorem styles and shortcut commands for symbols I use often
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem*{joke}{Joke}
+\newtheorem{ex}{Example}
+\newtheorem*{soln}{Solution}
+\newtheorem{prop}{Proposition}
+
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\graph}{\mathrm{graph}}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\M}{\mathbf{M}}
+\newcommand{\m}{\mathbf{m}}
+\newcommand{\MM}{\mathscr{M}}
+\newcommand{\HH}{\mathscr{H}}
+\newcommand{\Om}{\Omega}
+\newcommand{\Ho}{\in\HH(\Om)}
+\newcommand{\bd}{\partial}
+\newcommand{\del}{\partial}
+\newcommand{\bardel}{\overline\partial}
+\newcommand{\textdf}[1]{\textbf{\textsf{#1}}\index{#1}}
+\newcommand{\img}{\mathrm{img}}
+\newcommand{\ip}[2]{\left\langle{#1},{#2}\right\rangle}
+\newcommand{\inter}[1]{\mathrm{int}{#1}}
+\newcommand{\exter}[1]{\mathrm{ext}{#1}}
+\newcommand{\cl}[1]{\mathrm{cl}{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\vol}{\mathrm{vol}}
+\newcommand{\cnt}{\mathrm{ct}}
+\newcommand{\osc}{\mathrm{osc}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\support}{\mathrm{support}}
+\newcommand{\AND}{\;\wedge\;}
+\newcommand{\OR}{\;\vee\;}
+\newcommand{\Oset}{\varnothing}
+\newcommand{\st}{\ni}
+\newcommand{\wh}{\widehat}
+
+%Pagination stuff.
+\setlength{\topmargin}{-.3 in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textheight}{9.in}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+
+
+
+\begin{document}
+
+
+\begin{center}
+{\textbf{\Large AE601 Mathematical Methods in Aerospace Engineering}}\\
+
+\normalsize{Submitted by Ramesh M (SC23M061)}\\
+\end{center}
+
+\vspace{0.2 cm}
+
+\begin{enumerate}
+%1st Problem start
+\item
+Find the  general solution of the given second-order differential equation
+\[
+12y'' - 5y' - 2y = 0
+\]
+\emph{\textbf{Solution:}}
+The characteristic equation is
+
+\[12\lambda^2 - 5\lambda - 2 = 0\]
+
+Solving the quadratic equation, we get \(\lambda_1 = 0.6667\) and \(\lambda_2 = -0.25\).
+
+Since the roots are real and distinct, the general solution is
+
+\[{y}(x) = Ae^{0.6667x} + Be^{-0.25x}\]
+%1st Problem ends
+
+%2nd Problem starts
+\item 
+Solve the initial value problem
+\[y'' + y' - 6y = 0,\]
+\[
+y(0) = 10,\;y'(0) = 0
+\]
+and plot the solution.\\
+\\
+\emph{\textbf{Solution:}}
+
+The characteristic equation is
+\[
+\lambda^2 + \lambda - 6 = 0
+\]
+
+Solving the quadratic equation, we get \(\lambda_1 = 2\) and \(\lambda_2 = -3\).
+Since the roots are real and distinct, the general solution is
+\[
+y = Ae^{2x} + Be^{-3x}
+\]
+To find the constants A and B, we substitute the initial conditions
+\[
+A = 6\:and\:B = 4
+\]
+The general solution is
+\[{y}(x) = 6e^{2x} + 4e^{-3x}\]
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Problem 2.jpg}
+    \caption{Plot of $y(x) = 6e^{2x} + 4e^{-3x}$}
+\end{figure}
+\pagebreak
+%2nd Problem ends
+
+%3rd Problem starts
+\item 
+Solve the initial value problem
+\[x^{2}{y}'' + x{y}' - 4y = 0\]
+\[
+y(1) = 2, \; {y}'(1) = 0
+\]
+and plot the solution.\\
+\\
+\emph{\textbf{Solution:}}
+
+Comparing our equation with the Euler-Cauchy equation
+\[
+x^2{y}'' + x{y}' - 4y = 0 \;and\; x^2{y}'' + ax{y}' - by = 0
+\]
+\[
+a = 1,\;b = -4
+\]
+The auxiliary equation is
+\[
+m^2 + (a-1)m + b = 0
+\]
+\[
+m^2 + (0)m - 4 = 0
+\]
+solving the quadratic equation, we get 
+\[m_1 = 2\;and\;m_2 = -2\]
+The general solution is
+\[
+y = Ax^{2} + Bx^{-2}
+\]
+substituting the initial conditions, 
+\[
+A = 1\:and\:B = 1
+\]
+Substituting A and B, we get the general solution
+\[
+y(x) = x^{2} + x^{-2}
+\]
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Problem 3.jpg}
+    \caption{Plot of $y(x) = x^{2} + x^{-2}$}
+\end{figure}
+\pagebreak
+%End of 3rd problem
+
+%4th Problem start
+\item
+{Two roots of a cubic auxiliary equation with real coefficients are $\lambda_1 = -0.5$ and $\lambda_2 = 3 + i$. What is the corresponding homogeneous linear differential equation? Is your answer unique?}\\
+
+\emph{\textbf{Solution:}}
+We know that the complex roots come in conjugate pairs, so $\lambda_3 = 3 - i$.\\
+To get the auxiliary equation,
+\[
+(\lambda + 0.5)(\lambda - (3 + i))(\lambda + (3 - i)) = 0
+\]
+Multiplying the factors to get the cubic auxiliary equation,
+\[
+\lambda^3 - 5.5\lambda^2 + 7\lambda + 5 = 0
+\]
+The corresponding homogeneous linear differential equation is,
+\[
+{y}''' - 5.5{y}'' + 7{y}' + 5{y} = 0
+\]
+%4th Problem end
+
+%5th Problem start
+\item 
+Find a particular solution of the differential equation:
+\[ y'' - 3y' + 2y = e^{3x}(-1 + 2x + x^2) \]
+and plot it.\\
+
+\emph{\textbf{Solution:}}
+To find the particular solution of the differential equation, since the RHS is in the form of quadratic equation multiplied with an exponential term, we assume,
+\[
+y_p = (Ax^2 + Bx + C)e^{3x}
+\]
+differentiating once,
+\[
+{y_p}' = e^{3x}(2Ax + B) + 3e^{3x}(Ax^2 + Bx + C)
+\]
+differentiating twice
+\[
+{y_p}'' = 9Ae^{3x} + (12A + 9B)xe^{3x} + (2A + 6B + 9C)e^{3x} 
+\]
+substituting the values of ${y_p}'',{y_p}'$ and ${y}$, we get
+\[
+e^{3x}[2Ax^2 + (6A + 2B)x + 2A + 3B + 2C] = (x^2 + 2x - 1)e^{3x}
+\]
+Comparing the coefficients of $x^2,x$ and constant terms,
+\[
+A = 1/2,\;B = -1/2,\;C = -1/4
+\]
+Substituting the values in the ${y_p}$, we get
+\[
+{y_p}(x) = e^{3x}(\frac{x^2}{2} -\frac{x}{2} -\frac{1}{4})
+\]
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Problem 5.jpg}
+    \caption{Plot of $y_p(x) = e^{3x}(x^2/2 - x/2 - 1/4)$}
+\end{figure}
+%5th Problem end
+
+%6th Problem start
+\item 
+Solve the following differential equation by undetermined coefficients
+\[ y'' - 2y' + 5y = e^x \cos(2x) \]\\
+\emph{\textbf{Solution:}}
+The characteristic equation is
+\[\lambda^2 - 2\lambda + 5 = 0\]
+Solving the quadratic equation, we get \(\lambda_1 = 1 + 2i\) and \(\lambda_2 = 1 - 2i\).
+Since the roots are complex, the general solution of the homogeneous ODE is
+\[
+y_c = e^{x}(C_1\,\cos(2\,x) + C_2\,\sin(2\,x))
+\]
+Since the RHS is a trigonometric function multiplied with an exponential function, we choose the particular solution as
+\[
+y_p = e^x(A\,\cos(2\,x) + B\,\sin(2\,x))
+\]
+Since we have $e^x$ in our solution for the homogeneous equation, we multiply $y_p$ with an $x$
+\[
+y_p = xe^x(A\,\cos(2\,x) + B\,\sin(2\,x))
+\]
+Differentiating once,
+\[
+y_{p}'=\left(\left(2\,B+A\right)\,x+A\right)\,{e}^{x}\,\cos\left(2\,x\right)+\left(\left(B-2\,A\right)\,x+B\right)\,{e}^{x}\,\sin\left(2\,x\right)
+\]
+Differentiating twice,
+\[
+y_{p}''=\left(\left(4\,B-3\,A\right)\,x+4\,B+2\,A\right)\,{e}^{x}\,\cos\left(2\,x\right)+\left(\left(-3\,B-4\,A\right)\,x+2\,B-4\,A\right)\,{e}^{x}\,\sin\left(2\,x\right)
+\]
+Substituting ${y_p}'', {y_p}'$ and ${y}$ in the differential equation
+\[
+4\,B\,{e}^{x}\,\cos\left(2\,x\right)-4\,A\,{e}^{x}\,\sin\left(2\,x\right)={e}^{x}\,\cos\left(2\,x\right)
+\]
+Comparing the coefficients to find $A$ and $B$,
+\[
+A = 0,\,and\,B=\frac{1}{4}
+\]
+Substituting the values of $A$ and $B$ to the particular solution,
+\[
+y_{p}=\dfrac{x\,{e}^{x}\,\sin\left(2\,x\right)}{4}
+\]
+The general solution is $y = y_c + y_p$,
+\[
+{y}(x) = C_{1}\,{e}^{x}\,\cos\left(2\,x\right)+C_{2}\,{e}^{x}\,\sin\left(2\,x\right)+\dfrac{x\,{e}^{x}\,\sin\left(2\,x\right)}{4}
+\]
+
+%7th Problem starts
+\item 
+Find the frequency of oscillation of a pendulum of length $L$, neglecting air resistance and the weight of the rod, and assuming the amplitude of oscillation $\theta$ to be so small that $\sin \theta$ practically equals $\theta$.\\
+
+\emph{\textbf{Solution:}}
+The equation of motion for a simple pendulum can be given as:
+\[ \frac{d^2\theta}{dt^2} + \frac{g}{L} \sin{\theta} = 0 \]
+where $g$ is the acceleration due to gravity and $L$ is the length of the pendulum.
+
+Assuming a small amplitude of oscillation, we can approximate $\sin \theta \approx \theta$. Therefore, the equation becomes:
+\[ \frac{d^2\theta}{dt^2} + \frac{g}{L} \theta = 0 \]
+
+This is a second-order linear homogeneous differential equation with constant coefficients. Its characteristic equation is:
+\[ \lambda^2 + \frac{g}{L} = 0 \]
+Solving for $\lambda$, we find two complex roots:
+\[ \lambda = \pm i \sqrt{\frac{g}{L}} \]
+
+The general solution for the differential equation:
+\[ \theta(t) = A \cos \left( \sqrt{\frac{g}{L}} t \right) + B \sin \left( \sqrt{\frac{g}{L}} t \right) \]
+
+The frequency of oscillation $f$, is related to the angular frequency $\omega$ by the formula:
+\[ \omega = 2\pi f \]
+For the pendulum, $\omega$ is:
+\[ \omega = \sqrt{\frac{g}{L}} \]
+The frequency of oscillation is:
+\[f = \frac{1}{2\pi} \sqrt{\frac{g}{L}} \]
+%7th Problem ends
+
+%8th Problem starts
+\item 
+Show that the ratio of two consecutive maximum amplitudes of a damped free oscillation governed by the equation
+\[ m y'' + c y' + k y = 0 \]
+is constant. Show also that the natural logarithm of this ratio, called the logarithmic decrement, is given by $\Delta = \frac{2\pi \alpha}{\omega^*}$
+where
+\[ \alpha = \frac{c}{2m}\; and\; \omega^* = \frac{\sqrt{4mk - c^2}}{2m} \]
+
+Find $\Delta$ for the solutions of
+\[ {y}'' + 2{y}' + 5y = 0 \]\\
+\emph{\textbf{Solution:}}
+If the system is under-damped it will swing back and forth with decreasing size of the swing until it comes to a stop. Its amplitude will decrease exponentially.
+\\
+The phase angle form of the amplitude is given by
+\[
+x(t) = C\,e^{-\alpha\,t}\cos(\omega^*\,t - \phi)
+\]
+let $t_0$ and $t_1$ be the time between two maximum amplitudes, 
+\[
+x(t_0) = C\,e^{-\alpha\,t_0}\cos(\omega^*\,t_0 - \phi)
+\]
+\[
+x(t_1) = C\,e^{-\alpha\,t_1}\cos(\omega^*\,t_1 - \phi)
+\]
+we know that the time period(T) is,
+\[
+T = \frac{2\pi}{\omega^*}
+\]
+So,
+\[
+t_1 = t_0 +\frac{2\,\pi}{\omega^*} 
+\]
+substituting in $x({t_1})$,we get
+\[
+x(t_1) = C\,e^{-\alpha\,t_1}\cos(\omega^*\,t_0 - \phi + 2\pi)
+\]
+Dividing $x({t_0})$ by $x({t_1})$, we get
+\[
+\frac{x({t_0})}{x({t_1})} = e^{\frac{2 \pi \alpha}{\omega^*}}
+\]
+So, the ratio of two consecutive maximum amplitudes is constant.\\
+Taking natural logarithm of this ratio,
+\[
+\Delta = \ln{\frac{x({t_0})}{x({t_1})}} = \frac{2 \pi \alpha}{\omega^*}
+\]
+To find the $\Delta$ of the given ODE ${y}'' + 2{y}' + 5y = 0$,
+\[
+m = 1,\,c = 2,\,k = 5
+\]
+Substituting and solving for $\omega^*$, we get,
+\[
+\omega^* = 2
+\]
+Substituting the values in $\Delta$, we get,
+\[
+\Delta = \pi
+\]
+%8th problem ends
+%9th Problem starts
+\item 
+How does the frequency of the harmonic oscillation change if we:
+(i) Double the mass?
+(ii) Take a spring of twice the modulus? First find qualitative answers by physics, then look at formulas.\\
+
+\emph{\textbf{Solution:}}
+
+Qualitative answer by physics:
+
+1. When the mass is doubled, the inertia of the system increases. This means that it will be more resistant to acceleration and deceleration. As a result, the system's natural frequency will decrease. In other words, it will oscillate more slowly.
+
+2. When the spring modulus is doubled, it indicates that the spring becomes stiffer. A stiffer spring will exert a stronger force for a given displacement from the equilibrium position. This increased force will lead to a higher acceleration of the mass, causing it to oscillate more quickly. Therefore, doubling the spring constant will result in an increase in the natural frequency of the system.
+
+From formulas,When\\
+(i) Doubling the mass?\\
+Let $F_1$ be the original frequency and $F_2$ be the frequency after doubling the mass,
+\[
+F = \frac{\omega_0}{2 \pi}\\
+\]
+\[
+F_1 = \frac{\sqrt{\frac{k}{m_1}}}{2 \pi}\\
+\]
+\[
+m_2 = 2\,m_1
+\]
+\[
+F_2 = \frac{\sqrt{\frac{k}{m_2}}}{2 \pi}\\
+\]
+Substituting $m_2$, we get,
+\[
+F_1 = \sqrt{2}\,F_2
+\]
+After doubling the mass, frequency is lowered by the factor of $\sqrt{2}$.\\
+
+(ii) Take a spring of twice the modulus?
+\[
+k_2 = 2\,k_1
+\]
+\[
+F_1 = \frac{F_2}{\sqrt{2}}
+\]
+After doubling the modulus, frequency is higher by the factor of $\sqrt{2}$.
+%9th Problem ends
+%10th Problem starts
+\item 
+The natural length of a spring is 1 m. An object is attached to it, and the length of the spring increases to 102 cm when the object is in equilibrium. Then the object is initially displaced downward 1 cm and given an upward velocity of 14 cm/s. Find the displacement for \( t > 0 \).
+Also, find the natural frequency, period, amplitude, and phase angle of the resulting motion.\\
+
+\emph{\textbf{Solution:}}\\
+Given data:
+$l_1 = 100\, cm$ and $l_2 = 102\,cm$, $\Delta l = 2\,cm$,\,${y}'(0) = 14,\,y(0) = -1$\\
+The differential equation can be written as,
+\[
+{y}'' + 490y = 0
+\]
+The auxiliary equation is
+\[
+\lambda^2 + 490 = 0
+\]
+Solving for $\lambda$,
+\[
+\lambda_1 = 7\sqrt{10}i,\,\lambda_2 = -7\sqrt{10}i
+\]
+The general solution,
+\[
+{y}(t) = C_1\,\cos{7\sqrt{10}\,t} + C_2\,\sin{7\sqrt{10}\,t}
+\]
+Differentiating and applying the initial conditions,
+\[
+{y}'(t) = 7\,\sqrt{10}\,(-C_1\,\sin{7\sqrt{10}\,t} + C_2\,\cos{7\sqrt{10}\,t})
+\]
+\[
+C_1 = -1\,\, and\,\, C_2 = \frac{2}{\sqrt{10}}
+\]
+The frequency is $7\sqrt{10}\, rad/s$, and the time period is $T = \frac{2\,\pi}{(7\,\sqrt{10})}\, s$.\\
+The amplitude is\\
+\[
+R = \sqrt{{C_1}^2 + {C_2}^2}
+\]
+\[
+R = \sqrt{{-1}^2 + {\frac{2}{\sqrt{10}}}^2}
+\]
+\[
+R = \sqrt{\frac{7}{5}}\,\,cm.
+\]
+The phase angle,
+\[
+\cos{\phi} = - \sqrt{\frac{5}{7}}\,\, and\,\, \sin{\phi} = \sqrt{\frac{2}{7}}
+\]
+\[
+\phi = \cos^{-1}{(-\sqrt{\frac{5}{7}})}
+\]
+\[
+\phi \approx 2.58\,radians.
+\]
+%10th Problem ends
+%11th Problem starts
+\item 
+The mass ($m = 0.1 \, \text{kg}$) attached to a spring ($k = 50 \, \text{N/m}$) is initially stretched to $1 \, \text{m}$ length from the equilibrium position and released without any initial velocity. The motion is damped ($c = 2 \, \text{kg/s}$) and is being driven by an external periodic ($T = \frac{\pi}{10} \, \text{s}$) force beginning at $t = 0$. Determine the displacement of mass as a function of time. Plot the displacement versus time graph.\\
+
+\emph{\textbf{Solution:}}\\
+Given data:
+$m = 0.1 \text{kg}, \, c = 2 \, \text{kg/s}, \, k = 50 \, \text{N/m}, \, T = \frac{\pi}{10} \, \text{s}, \, {x}(0) = 1 \, {x}'(0) = 0,$
+$F_0 = 50 \, \text{N}$.\\
+From T, we can get $\omega = 20$
+The differential equation can be written as,
+\[
+0.1{x}'' + 2{x}' + 50{x} = 50 \, \cos{20\,t}
+\]
+Dividing the equation by 0.1,
+\[
+{x}'' + 20{x}' + 500{x} = 500 \, \cos{20\,t}
+\]
+The characteristic equation is
+\[\lambda^2 + 20\lambda + 500 = 0\]
+Solving the quadratic equation, we get \(\lambda_1 = -10 + 20i\) and \(\lambda_2 = -10 - 20i\).
+Since the roots are complex, the general solution of the homogeneous ODE is
+\[
+x_c = e^{-10\,t}(C_1\,\cos(20\,t) + C_2\,\sin(20\,t))
+\]
+Since the RHS is a trigonometric function, we choose the particular solution as
+\[
+x_p = A\,\cos(20\,t) + B\,\sin(20\,t)
+\]
+differentiating once,
+\[
+x_{p}'= -20\,A\,\sin\left(20\,t\right) + 20\,B\,\cos\left(20\,t\right)
+\]
+differentiating twice
+\[
+x_{p}''= -400\,A\,\cos\left(20\,t\right)-400\,B\,\sin\left(20\,t\right)
+\]
+substituting the values of ${x_p}'',{x_p}'$ and ${x}$, we get
+\[
+(100\,A + 400\,B)\,\cos{20\,t} + (-400\,A + 100\,B) = 20\,\cos{20\,t}
+\]
+Comparing the coefficients of $\cos{20\,t}$ and $\sin{20\,t}$,
+\[
+A = \frac{5}{17}\,\,\,and\,\,\, B = \frac{20}{17} 
+\]
+Substituting the values in the ${x_p}$, we get
+\[
+x_p = (\frac{5}{17})\,\cos{20\,t} + (\frac{20}{17})\,\sin{20\,t}
+\]
+The general equation is,
+\[
+x(t) = e^{-10\,t}\,(C_1\,\cos{20\,t} + C_2\,\sin{20\,t}) + (\frac{5}{17})\,\cos{20\,t} + (\frac{20}{17})\,\sin{20\,t}
+\]
+Differentiating the general solution,
+\[
+{x}'(t) = e^{-10\,t}\,(-20\,C_1\,\sin{20\,t} + 20\,C_2\,\cos{20\,t}) -\,10\,e^{-10\,t}\,(C_1\,\cos{20\,t} + C_2\,\sin{20\,t}) - \frac{100}{17}\,\sin{20\,t} + \frac{400}{17}\,\cos{20\,t}
+\]
+Substituting the initial conditions and solving for $C_1$\, and\, $C_2$,
+\[
+C_1 = \frac{12}{17}\,\,\,and\,\,\, C_2 = \frac{-14}{17}
+\]
+Substituting the values in the general solution,
+\[
+x(t) = e^{-10\,t}\,((\frac{12}{17})\,\cos{20\,t} - (\frac{14}{17})\,\sin{20\,t}) + (\frac{5}{17})\,\cos{20\,t} + (\frac{20}{17})\,\sin{20\,t}
+\]
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Images/Problem 11.jpg}
+    \caption{Plot of Displacement vs Time}
+\end{figure}
+\pagebreak
+%11th Problem ends
+%12th Problem starts
+\item 
+Solve the initial value problem
+\[
+\frac{d^2x}{dt^2} + \omega_0^2x = \cos(\omega t),\,\,\,\, {x}(0) = 0,\,\,\, {x}'(0) = 0
+\]
+for $\omega_0 = 50$, $\omega = 20$, $40$, $48$, $52$, $50$, where $\omega_0$ and $\omega$ are in rad/s. Plot the graph $x$ vs $t$ for each of these cases.\\
+
+\emph{\textbf{Solution:}}\\
+From the differential equation,
+$m = 1$\,\, $k = {\omega_0}^2$,\,\, ${x}(0) = 0$,\,\, ${x}'(0) = 0$,\,\, $\omega_0 = 50$,\,\, $F_0 = 1$
+
+The characteristic equation is
+\[\lambda^2 + {\omega_0}^2 = 0\]
+Solving the quadratic equation, we get \(\lambda_1 = {\omega_0}\,i\) and \(\lambda_2 = -{\omega_0}\,i\).
+Since the roots are complex, the general solution of the homogeneous ODE is
+\[
+x_c = C_1\,\cos({\omega_0}\,t) + C_2\,\sin({\omega_0},t)
+\]
+Since the RHS is a trigonometric function, we choose the particular solution as
+\[
+x_p = (A\,\cos(\omega\,t) + B\,\sin(\omega\,t))
+\]
+differentiating once,
+\[
+x_{p}'= -\omega\,A\,\sin(\omega\,t) + \omega\,B\,\cos(\omega\,t)
+\]
+differentiating twice,
+\[
+x_{p}''= -\omega^2\,A\,\cos{(\omega\,t)} - \omega\,B\,\sin{(\omega\,t)}
+\]
+Substituting and comparing coefficients,
+\[
+(-\omega^2\,A\, + \omega^2\,AB)\,\cos{(\omega\,t)} + (-\omega^2\,B\, + \omega^2\,B)\,\sin{(\omega\,t)} = \cos{(\omega\,t)}
+\]
+\[
+A = \frac{1}{{\omega_0}^2 - {\omega^2}}
+\]
+Substituting in $x_p$,
+\[
+x_p = (\frac{\cos{\omega\,t}}{{\omega_0}^2 - {\omega^2}})
+\]
+General solution ${x}(t) = {x_c} + {x_p}$,
+\[
+{x}(t) = C_1\,\cos({\omega_0}\,t) + C_2\,\sin({\omega_0},t) +  (\frac{\cos({\omega\,t})}{{\omega_0}^2 - {\omega^2}})
+\]
+Differentiating the general solution,
+\[
+{x}'(t) = -C_1\,\omega_0\,\sin({\omega_0}\,t) + C_2\,\omega_0\,\cos({\omega_0},t) -  (\frac{\omega\,\sin({\omega\,t})}{{\omega_0}^2 - {\omega^2}})
+\]
+Applying the initial conditions ${x}(0) = 0$,\,\, ${x}'(0) = 0$\, and solving for $C_1$\, and\, $C_2$
+\[
+C_1 = -\,(\frac{1}{({\omega_0}^2 - {\omega^2}})
+\]
+General solution,
+\[
+{x}(t) = \frac{\cos{(\omega\,t)} - \cos{(\omega_0\,t)} }{{\omega_0}^2 - {\omega^2}}
+\]
+Substituting $\omega_0 = 50$,
+\[
+{x}(t) = \frac{\cos{(\omega\,t)} - \cos{(50\,t)} }{2500 - {\omega^2}}
+\]
+When $\omega = 20$,
+\[
+{x}(t) = \frac{1}{2100}\,(\cos{20\,t} - \cos{50\,t})
+\]
+When $\omega = 40$,
+\[
+{x}(t) = \frac{1}{900}\,(\cos{40\,t} - \cos{50\,t})
+\]
+When $\omega = 48$,
+\[
+{x}(t) = \frac{1}{196}\,(\cos{48\,t} - \cos{50\,t})
+\]
+When $\omega = 52$,
+\[
+{x}(t) = \frac{-1}{204}\,(\cos{52\,t} - \cos{50\,t})
+\]
+When $\omega = 50$,\, i.e\,$\omega = \omega_0$ The solution becomes, 
+\[
+{x}(t) = (\frac{1}{2\,\omega_0})\,t\,\sin{(\omega_0\,t)}
+\]
+Because of the factor t, the amplitude of the vibration becomes larger and larger. Practically the system would fail.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Problem 12 - 20.jpg}
+    \caption{Displacement of x when $\omega = 20$}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Problem 12 - 40.jpg}
+    \caption{Displacement of x when $\omega = 40$}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Problem 12 - 48.jpg}
+    \caption{Displacement of x when $\omega = 48$}
+\end{figure}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Problem 12 - 52.jpg}
+    \caption{Displacement of x when $\omega = 52$}
+\end{figure}
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/Problem 12 - 50.jpg}
+    \caption{Displacement of x when $\omega = 50$}
+\end{figure}
+\end{enumerate}
+\end{document}
